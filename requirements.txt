@@ -1,0 +1,5 @@
+streamlit
+pandas
+PyMuPDF
+requests
+demjson3
