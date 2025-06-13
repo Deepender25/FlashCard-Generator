@@ -5,7 +5,7 @@
 [![Model](https://img.shields.io/badge/Model-Zephyr--7B-yellow.svg)](https://huggingface.co/HuggingFaceH4/zephyr-7b-beta)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-> 📘 A lightweight, LLM-powered tool to convert educational content into flashcards in seconds.
+> 📘 A lightweight, LLM-powered tool to convert educational content into flashcards.
 
 ---
 
