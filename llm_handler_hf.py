@@ -1,12 +1,11 @@
 # llm_handler_hf.py
 import requests
 import demjson3
-import logging
+
 import re
 
 # --- CONFIGURATION ---
 API_URL = "https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta"
-logging.basicConfig(level=logging.INFO)
 
 # --- NEW, MORE RELIABLE FIXER FUNCTION ---
 def fix_json_format(raw_text: str) -> str:
@@ -18,13 +17,11 @@ def fix_json_format(raw_text: str) -> str:
     # 1. Find the start of the JSON list
     start_bracket = raw_text.find('[')
     if start_bracket == -1:
-        logging.error("No opening bracket '[' found in the response.")
         return raw_text # Return as is if no JSON list is found
     
     # 2. Find the end of the JSON list
     end_bracket = raw_text.rfind(']')
     if end_bracket == -1:
-        logging.error("No closing bracket ']' found in the response.")
         return raw_text
 
     # 3. Extract the JSON part
@@ -38,7 +35,6 @@ def fix_json_format(raw_text: str) -> str:
     if re.search(pattern, json_part.strip()):
         # Insert the missing '}'
         fixed_json = json_part.strip()[:-1] + "}]"
-        logging.warning("Detected and fixed a missing closing brace '}' in the JSON response.")
         return fixed_json
 
     return json_part
@@ -76,7 +72,6 @@ Generate flashcards for the following text on the subject of '{subject}':
     }
 
     try:
-        logging.info("Sending request to Hugging Face API...")
         response = requests.post(API_URL, headers=headers, json=payload, timeout=180)
 
         if response.status_code == 503:
@@ -89,11 +84,9 @@ Generate flashcards for the following text on the subject of '{subject}':
              return None, f"Received an unexpected response format from the API: {result}"
 
         generated_text = result[0]['generated_text']
-        logging.info(f"Received raw response from HF: {generated_text}")
 
         # Apply our robust fixer before attempting to parse
         fixed_text = fix_json_format(generated_text)
-        logging.info(f"Text after cleaning/fixing: {fixed_text}")
 
         try:
             flashcards = demjson3.decode(fixed_text)
