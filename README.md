@@ -80,36 +80,66 @@ Built with **Streamlit** and powered by **Zephyr-7B-β** (via Hugging Face), it 
 ## 🧰 Setup and Installation
 
 ### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/Deepender25/FlashCard-Generator.git
 cd FlashCard-Generator
+```
 
-2. Create and Activate Virtual Environment
-# For Unix/macOS
+---
+
+### 2. Create and Activate Virtual Environment
+
+**For Unix/macOS:**
+```bash
 python3 -m venv venv
 source venv/bin/activate
+```
 
-# For Windows
+**For Windows:**
+```bash
 python -m venv venv
 venv\Scripts\activate
+```
 
-3. Install Dependencies
+---
+
+### 3. Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-4. Get Your Hugging Face API Token
-Visit huggingface.co/settings/tokens and generate a User Access Token (with read permissions).
+---
 
-You’ll be prompted to paste this token into the Streamlit sidebar during app usage.
+### 4. Get Your Hugging Face API Token
 
-▶️ How to Run
+- Visit [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens) and generate a **User Access Token** (with read permissions).
+- You’ll be prompted to paste this token into the Streamlit sidebar during app usage.
+
+---
+
+## ▶️ How to Run
+
+```bash
 streamlit run app.py
-Visit the local URL shown (usually http://localhost:8501) to access the app.
+```
 
-🧪 Sample Execution
-🔹 Input Text
+- Visit the local URL shown (usually `http://localhost:8501`) to access the app.
+
+---
+
+## 🧪 Sample Execution
+
+### 🔹 Input Text
+
+```
 Photosynthesis is a process used by plants, algae, and certain bacteria to convert light energy into chemical energy...
+```
 
-🔹 Sample Flashcards (JSON)
+### 🔹 Sample Flashcards (JSON)
+
+```json
 [
   {
     "question": "What are the two stages of photosynthesis?",
@@ -120,26 +150,40 @@ Photosynthesis is a process used by plants, algae, and certain bacteria to conve
     "answer": "They occur in the thylakoid membranes of chloroplasts."
   }
 ]
+```
 
-🔹 Export Files
-quizlet_import.txt
+---
 
-Where do the light-dependent reactions occur?	They occur in the thylakoid membranes of chloroplasts.
+### 🔹 Export Files
 
-flashcards.csv
+**quizlet_import.txt**
+
+```
+Where do the light-dependent reactions occur?    They occur in the thylakoid membranes of chloroplasts.
+```
+
+**flashcards.csv**
+
+```csv
 question,answer
 Where do the light-dependent reactions occur?,They occur in the thylakoid membranes of chloroplasts.
+```
 
-🧠 Design Decisions & Prompt Engineering
-🔸 Why Zephyr-7B-β?
-Instruction-tuned for Q&A tasks
+## 🧠 Design Decisions & Prompt Engineering
 
-Efficient and open-source
+### 🔸 Why Zephyr-7B-β?
 
-Easy integration with Hugging Face Inference API
+- Instruction-tuned for Q&A tasks  
+- Efficient and open-source  
+- Easy integration with Hugging Face Inference API  
 
-🔸 Prompt Engineering Strategy
-The prompt used in llm_handler_hf.py:
+---
+
+### 🔸 Prompt Engineering Strategy
+
+Prompt used in `llm_handler_hf.py`:
+
+```python
 prompt = f"""<|system|>
 You are an expert flashcard creator. Your task is to generate exactly {num_cards} question-answer flashcards based on the provided text.
 Your entire response MUST be a single, valid JSON list of objects. Each object must have a "question" key and an "answer" key.
@@ -152,14 +196,21 @@ Generate flashcards for the following text on the subject of '{subject}':
 ---</s>
 <|assistant|>
 """
+```
 
-🔸 JSON Cleanup Handling
-fix_json_format() strips out extra text or missing brackets.
+---
 
-Uses demjson3 for lenient parsing.
+### 🔸 JSON Cleanup Handling
 
-Robust error messages for API failures, timeouts, and decoding issues.
+- `fix_json_format()` strips out extra text or missing brackets.  
+- Uses `demjson3` for lenient parsing.  
+- Robust error handling for API failures, timeouts, and decoding issues.  
 
+---
+
+## 📁 Project Structure
+
+```
 .
 ├── app.py              # Main Streamlit UI
 ├── llm_handler_hf.py   # Hugging Face API & prompt logic
@@ -167,17 +218,21 @@ Robust error messages for API failures, timeouts, and decoding issues.
 ├── .gitignore          # Files to ignore in Git
 ├── .env.example        # Example for API token handling
 └── README.md           # You're reading it!
+```
 
-🔮 Future Work
-📝 Flashcard Editor – Let users edit flashcards before exporting.
+---
 
-📦 Anki Export – Add .apkg support via genanki.
+## 🔮 Future Work
 
-🧠 Topic Clustering – Group questions by sub-topic or difficulty.
+- 📝 **Flashcard Editor** – Let users edit flashcards before exporting.  
+- 📦 **Anki Export** – Add `.apkg` support via `genanki`.  
+- 🧠 **Topic Clustering** – Group questions by sub-topic or difficulty.  
+- 🚀 **Public Deployment** – Host on Streamlit Cloud or Hugging Face Spaces.  
+- 🌐 **Multi-language Support** – Generate flashcards in different languages.  
 
-🚀 Public Deployment – Host on Streamlit Cloud or Hugging Face Spaces.
+---
 
-🌐 Multi-language Support – Generate flashcards in different languages.
+## 📄 License
 
-📄 License
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
