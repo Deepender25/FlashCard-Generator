@@ -14,9 +14,11 @@
 https://github.com/user-attachments/assets/68797cdd-d19b-4feb-b56e-68f8b4c42bf2
 
 ---
-## 🖼️ Screenshots
+## 🖼️ UI Screenshots
 
 ![Screenshot 2025-06-13 205813](https://github.com/user-attachments/assets/0357900f-d342-44ee-979b-20c37ff7c5eb)
+
+![Screenshot 2025-06-13 205832](https://github.com/user-attachments/assets/079e8080-8613-4dcf-ace5-4d2ef4f794d9)
 
 ![Screenshot 2025-06-13 205848](https://github.com/user-attachments/assets/21a2d285-03c4-44a3-a670-3112ec308626)
 
