@@ -11,7 +11,7 @@
 
 ## 🎥 Demo Video
 
-C:\Users\yadav\flashcard-generator\Flashcard Generator.mp4
+🎬 [Watch Demo on Google Drive](https://drive.google.com/file/d/1AFkrpbKPBHHNYgd8yq_AmHytNci7dmAU/view?usp=sharing)
 
 ---
 
