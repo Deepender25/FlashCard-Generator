@@ -173,10 +173,3 @@ Robust error messages for API failures, timeouts, and decoding issues.
 
 📄 License
 This project is licensed under the MIT License.
-
-
-Let me know if you'd like me to:
-- Generate a mock screenshot for `Sample Execution`
-- Help you write a demo video script
-- Assist with deploying this to Streamlit Cloud or Hugging Face Spaces  
-- Or prepare a pitch-style summary for GitHub, LinkedIn, or resumes
