@@ -11,8 +11,7 @@
 
 ## 🎥 Demo Video
 
-🎬 [Watch a 2-minute Demo Video Here](https://your-video-link.com)  
-*(Replace this link with your recorded demo once available.)*
+C:\Users\yadav\flashcard-generator\Flashcard Generator.mp4
 
 ---
 
