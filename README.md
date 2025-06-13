@@ -11,7 +11,7 @@
 
 ## 🎥 Demo Video
 
-🎬 [Watch Demo on Google Drive](https://drive.google.com/file/d/1AFkrpbKPBHHNYgd8yq_AmHytNci7dmAU/view?usp=sharing)
+https://github.com/user-attachments/assets/68797cdd-d19b-4feb-b56e-68f8b4c42bf2
 
 ---
 
