@@ -114,7 +114,7 @@ pip install -r requirements.txt
 
 ### 4. Get Your Hugging Face API Token
 
-- Visit [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens) and generate a **User Access Token** (with read permissions).
+- Visit [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens) and generate a **User Access Token** (with write permissions).
 - You’ll be prompted to paste this token into the Streamlit sidebar during app usage.
 
 ---
